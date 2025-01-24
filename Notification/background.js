@@ -1,41 +1,59 @@
-// Default interval for notifications (6 seconds for testing)
-const DEFAULT_INTERVAL = 0.1; // 0.1 minutes = 6 seconds
+// Default notification interval in minutes
+const DEFAULT_INTERVAL = 1;
+let isMuted = false; // Tracks mute status
 
-// Track mute status
-let isMuted = false;
-
-// Set up the alarm when the extension is installed
+// On installation or extension load, set default interval
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.alarms.create("breakReminder", { delayInMinutes: DEFAULT_INTERVAL, periodInMinutes: DEFAULT_INTERVAL });
+  chrome.storage.local.get(["notificationInterval"], (result) => {
+    if (!result.notificationInterval) {
+      chrome.storage.local.set({ notificationInterval: DEFAULT_INTERVAL });
+    }
+  });
+
+  setAlarm(); // Create the alarm based on the saved interval
 });
 
-// Listen for the alarm and trigger the popup if not muted
+// Function to set the alarm based on the current interval
+function setAlarm() {
+  chrome.storage.local.get("notificationInterval", (result) => {
+    const interval = result.notificationInterval || DEFAULT_INTERVAL;
+    chrome.alarms.create("breakReminder", { delayInMinutes: interval, periodInMinutes: interval });
+  });
+}
+
+// Listen for updates to notification interval or mute requests
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "updateInterval") {
+    const newInterval = message.interval;
+    chrome.storage.local.set({ notificationInterval: newInterval }, () => {
+      chrome.alarms.clear("breakReminder", () => {
+        setAlarm();
+        sendResponse({ success: true });
+      });
+    });
+    return true;
+  } else if (message.action === "mute") {
+    const muteDuration = message.duration;
+    isMuted = true;
+    chrome.alarms.clear("breakReminder", () => {
+      setTimeout(() => {
+        isMuted = false;
+        setAlarm(); // Resume notifications after mute period
+      }, muteDuration * 60 * 1000); // Convert minutes to milliseconds
+    });
+    sendResponse({ success: true });
+    return true;
+  }
+});
+
+// Listen for alarms to trigger the popup, unless muted
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "breakReminder" && !isMuted) {
     chrome.windows.create({
       url: "popup.html",
       type: "popup",
       width: 400,
-      height: 300
-    });
-  }
-});
-
-// Handle mute status
-chrome.runtime.onMessage.addListener((message) => {
-  if (message.action === "mute") {
-    const muteDurationInMinutes = message.duration;
-    isMuted = true;
-
-    // Clear the alarm and set it to resume after the mute duration
-    chrome.alarms.clear("breakReminder", () => {
-      setTimeout(() => {
-        isMuted = false; // Resume notifications after mute period
-        chrome.alarms.create("breakReminder", {
-          delayInMinutes: DEFAULT_INTERVAL,
-          periodInMinutes: DEFAULT_INTERVAL
-        });
-      }, muteDurationInMinutes * 60 * 1000); // Convert minutes to milliseconds
+      height: 350,
     });
   }
 });

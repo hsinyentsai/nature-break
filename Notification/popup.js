@@ -10,7 +10,34 @@ document.getElementById("work-btn").addEventListener("click", () => {
   window.close();
 });
 
-// Show mute options when "Mute me to stay focused" is clicked
+// Update notification frequency
+document.getElementById("update-frequency-btn").addEventListener("click", () => {
+  const hours = parseInt(document.getElementById("hours-input").value) || 0;
+  const minutes = parseInt(document.getElementById("minutes-input").value) || 0;
+
+  // Calculate total time in minutes
+  const totalMinutes = hours * 60 + minutes;
+
+  if (totalMinutes <= 0) {
+    alert("Please enter a valid frequency (at least 1 minute).");
+    return;
+  }
+
+  // Send the new interval to the background script
+  chrome.runtime.sendMessage(
+    { action: "updateInterval", interval: totalMinutes },
+    (response) => {
+      if (response && response.success) {
+        alert(`Notification frequency updated to ${hours} hour(s) and ${minutes} minute(s).`);
+        window.close();
+      } else {
+        alert("Failed to update the notification frequency.");
+      }
+    }
+  );
+});
+
+// Toggle mute options visibility
 document.getElementById("mute-btn").addEventListener("click", () => {
   const muteOptions = document.getElementById("mute-options");
   muteOptions.style.display = muteOptions.style.display === "block" ? "none" : "block";
@@ -19,9 +46,15 @@ document.getElementById("mute-btn").addEventListener("click", () => {
 // Handle mute duration selection
 document.querySelectorAll(".mute-button").forEach((button) => {
   button.addEventListener("click", (event) => {
-    const duration = parseInt(event.target.getAttribute("data-duration")); // Duration in minutes
-    chrome.runtime.sendMessage({ action: "mute", duration });
-    alert(`Notifications muted for ${duration / 60} hour(s).`);
-    window.close();
+    const duration = parseInt(event.target.getAttribute("data-duration"));
+    chrome.runtime.sendMessage(
+      { action: "mute", duration: duration },
+      (response) => {
+        if (response && response.success) {
+          alert(`Notifications muted for ${duration / 60} hour(s).`);
+          window.close();
+        }
+      }
+    );
   });
 });
