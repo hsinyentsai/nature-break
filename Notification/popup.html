@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Break Reminder</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 0;
+          padding: 20px;
+          background-color: #f0f8ff;
+        }
+        h1 {
+          color: #4caf50;
+        }
+        p {
+          font-size: 16px;
+          color: #555;
+        }
+        button {
+          margin: 10px;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: #4caf50;
+          color: white;
+          transition: background-color 0.3s;
+        }
+        button:hover {
+          background-color: #45a049;
+        }
+        #work-btn {
+          background-color: #f44336;
+        }
+        #work-btn:hover {
+          background-color: #d32f2f;
+        }
+
+        /* Style for the mute button */
+        #mute-btn {
+          background-color: #808080; /* Gray background */
+          color: white;
+        }
+        #mute-btn:hover {
+          background-color: #696969; /* Darker gray on hover */
+        }
+
+        /* Style for all mute duration buttons */
+        .mute-button {
+          margin: 5px;
+          padding: 10px 15px;
+          font-size: 14px;
+          border: none;
+          border-radius: 5px;
+          background-color: #808080; /* Gray background */
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        .mute-button:hover {
+          background-color: #696969; /* Darker gray on hover */
+        }
+
+        #mute-options {
+          display: none;
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Take a Nature Break! 🌿</h1>
+<p>You’ve been working hard. Time to recharge! What would you like to do?</p>
+<button id="youtube-btn">🌼 Yes, take me there!</button>
+<button id="work-btn">💻 I'd rather keep working.</button>
+<br />
+<button id="mute-btn">🔇 Mute me to stay focused</button>
+<div id="mute-options">
+    <button class="mute-button" data-duration="60">1 Hour</button>
+    <button class="mute-button" data-duration="120">2 Hours</button>
+    <button class="mute-button" data-duration="300">5 Hours</button>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

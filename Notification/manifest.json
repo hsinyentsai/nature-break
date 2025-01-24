@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Nature Break Reminder",
+  "version": "1.0",
+  "description": "Custom popup for nature break reminder.",
+  "permissions": ["alarms", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "host_permissions": ["<all_urls>"]
+}
