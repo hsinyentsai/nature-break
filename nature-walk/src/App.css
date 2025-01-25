@@ -65,7 +65,7 @@ body {
 
 /* FOREST */
  /** FOREST BEAR **/
-.App-background {
+ .App-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -73,6 +73,18 @@ body {
   height: 100%;  /* Ensure it covers the full height */
   object-fit: cover;  /* Ensure it covers the entire viewport without distortion */
   z-index: -1;  /* Make sure the background is behind other elements */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  background-position: 0% 0%; /* Initial position */
+  animation: moveBackground 180s linear infinite; /* Slow and continuous movement */
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%; /* Starting position */
+  }
+  100% {
+    background-position: 100% 100%; /* Slowly moves across the screen */
+  }
 }
 
 .bear-container {
