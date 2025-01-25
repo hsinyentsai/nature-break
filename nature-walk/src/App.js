@@ -148,7 +148,7 @@ function App() {
             onClick={() => setInteractionMode(!interactionMode)}
             className="mode-btn"
           >
-            {interactionMode ? 'Switch to Relax' : 'Switch to Interaction'}
+            {interactionMode ? 'Switch to Relax Mode' : 'Switch to Interaction Mode'}
           </button>
         </div>
         <IconMenu onSelect={handleSceneChange} />

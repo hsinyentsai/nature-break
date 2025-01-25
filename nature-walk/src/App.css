@@ -142,7 +142,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f8fbf9; /* Slightly different background color */
-  padding: 25px 50px;
+  padding: 25px 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   z-index: 1000;
@@ -321,7 +321,7 @@ button:hover {
   font-size: 40px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  margin-left: 15px; /* Space between the text and checkmark button */
+  margin-left: 20px; /* Space between the text and checkmark button */
 }
 
 .checkmark-button:hover {

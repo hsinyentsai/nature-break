@@ -33,7 +33,7 @@ export const Ocean = ({ onAnimalClick, animalStage, showMessage, onCheckmarkClic
                     )}
                     {animalStage === 1 && showMessage && (
                         <div className="popup-main">
-                            <p>The starfish is basking in the sun! ☀️ Take a moment to enjoy the warmth and relax. 😊</p>
+                            <p>It's okay ☀️ you can lie down and be lazy like the starfish for a minute! 😊</p>
                             <button onClick={onCheckmarkClick}>✔️</button>
                         </div>
                     )}
