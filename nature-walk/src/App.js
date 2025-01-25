@@ -20,7 +20,7 @@ function App() {
     // Trigger session timeout popup after 5 minutes
     const sessionTimeout = setTimeout(() => {
       setSessionPopup(true);
-    }, 5 * 60 * 100); // 5 minutes in milliseconds
+    }, 5 * 60 * 1000); // 5 minutes in milliseconds
 
     return () => clearTimeout(sessionTimeout);
   }, []);
@@ -40,10 +40,11 @@ function App() {
 
   return (
     <div className="App">
+      {/* Icon Menu to change components */}
       <IconMenu onSelect={setSelectedComponent} />
 
-      {/* Music menu */}
-      <MusicMenu />
+      {/* Pass selectedComponent to MusicMenu */}
+      <MusicMenu currentScene={selectedComponent} />
 
       {/* Render the selected component */}
       {renderComponent()}
