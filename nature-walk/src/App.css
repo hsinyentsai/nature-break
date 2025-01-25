@@ -17,18 +17,28 @@ body {
 
 /* MENU */
 .popup-welcome {
+  animation: fadeIn 0.75s ease-in-out;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f8fbf9;
-  padding: 30px 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  z-index: 1000;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 80px;
   text-align: center;
-  width: 90%;
-  max-width: 500px;
+  z-index: 1000;
+  max-width: 400px;
+  width: 80%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Center the buttons and add space between them */
@@ -78,12 +88,12 @@ body {
 
 .close-btn-main {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   color: black;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 10px;
   cursor: pointer;
 }
 
@@ -176,31 +186,68 @@ body {
 
 .Bear-1 {
   width: 250px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  animation: fadeIn 0.75s ease-in-out;
 }
 
 /* Owl position (adjust position based on preference) */
 .owl-container {
-  top: 35%;
-  left: 72%;
+  top: 15%;
+  left: 75%;
   transform: translate(-50%, -50%);
 }
-
+ 
 .Owl {
-  width: 150px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  width: 180px;
+  animation: fadeIn 0.75s ease-in-out;
 }
 
 /* Rabbit position (adjust position based on preference) */
-.rabbit-container {
-  top: 70%;
-  left: 65%;
+.rabbit-group {
+  display: flex;
+  position: absolute;
   transform: translate(-50%, -50%);
+  z-index: 5;
+  gap: 20px; /* Space between rabbits */
 }
 
+/* Rabbit 1 (main rabbit) */
+.rabbit-container {
+  position: absolute;
+  top: 49%; /* Adjust based on desired position */
+  left: 47%; /* Adjust based on desired position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Rabbit 2 */
+.rabbit-container1 {
+  position: absolute;
+  top: 55%; /* Example position */
+  left: 20%; /* Example position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Rabbit 3 */
+.rabbit-container2 {
+  position: absolute;
+  top: 80%; /* Example position */
+  left: 85%; /* Example position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Common Rabbit Styles */
 .Rabbit {
+  width: 150px;
+  animation: fadeIn 0.75s ease-in-out;
+  cursor: pointer;
+}
+
+.Rabbit2 {
   width: 200px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  animation: fadeIn 0.75s ease-in-out;
+  cursor: pointer;
 }
 
 /* Popup and button styles */
@@ -216,6 +263,7 @@ body {
   z-index: 1000; /* Ensure popup is above animal */
   text-align: center;
   max-width: 80%;
+  animation: fadeIn 0.75s ease-in-out;
 }
 
 .center-popup {

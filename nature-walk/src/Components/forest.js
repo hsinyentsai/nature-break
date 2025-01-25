@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import bear from '../Asset/bear.svg';
 import owl from '../Asset/Owl.svg';
 import rabbit from '../Asset/rabbit.svg';
+import rabbit2 from '../Asset/r1.svg';
+import rabbit5 from '../Asset/r5.svg';
 import '../App.css';
 import logo from '../Asset/ForrestVideo.mp4.mp4'; // Default background (bear)
 
@@ -52,9 +54,17 @@ export const Forest = ({ onAnimalClick, animalStage, showMessage, onCheckmarkCli
 
             {/* Rabbit */}
             {animalStage === 3 && (
-                <div className="rabbit-container" onClick={onAnimalClick}>
-                    <img src={rabbit} alt="rabbit" className="Rabbit" />
-                </div>
+                <>
+                    <div className="rabbit-container" onClick={onAnimalClick}>
+                        <img src={rabbit} alt="rabbit" className="Rabbit" />
+                    </div>
+                    <div className="rabbit-container1" onClick={onAnimalClick}>
+                        <img src={rabbit2} alt="rabbit2" className="Rabbit" />
+                    </div>
+                    <div className="rabbit-container2" onClick={onAnimalClick}>
+                        <img src={rabbit5} alt="rabbit5" className="Rabbit2" />
+                    </div>
+                </>
             )}
             {animalStage === 3 && showMessage && (
                 <div className="popup-main">

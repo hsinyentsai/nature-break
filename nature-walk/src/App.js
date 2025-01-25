@@ -92,7 +92,7 @@ function App() {
       {sessionPopup && (
         <div className="popup-welcome">
           <button className="close-btn-main" onClick={() => setSessionPopup(false)}>X</button>
-          <p>Your session has ended. How do you feel? 😊</p>
+          <p>Your 5-minute break has ended. How do you feel? 😊</p>
           <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
             <button onClick={handleSessionEnd}>I want to stay and relax 🌱</button>
             <button onClick={() => window.close()}>I feel refreshed and ready to work 🏋🏻‍♂️</button>
