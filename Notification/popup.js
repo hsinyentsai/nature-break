@@ -24,10 +24,8 @@ document.getElementById("work-btn").addEventListener("click", () => {
 
 // Toggle mute options visibility
 document.getElementById("mute-btn").addEventListener("click", () => {
-  const muteOptions = document.querySelectorAll(".mute-option");
-  muteOptions.forEach(option => {
-    option.style.display = option.style.display === "block" ? "none" : "block";
-  });
+  const muteOptions = document.getElementById("mute-options");
+  muteOptions.style.display = muteOptions.style.display === "flex" ? "none" : "flex";
 });
 
 // Handle mute duration selection
