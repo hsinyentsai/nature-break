@@ -43,7 +43,7 @@ function App() {
     }
   };
 
-  // Show a different scene (mountain or ocean)
+  // Show a different scene (forest or ocean)
   const handleSceneChange = (scene) => {
     setShowEndPopup(false);
     setSessionPopup(false);
@@ -77,22 +77,30 @@ function App() {
 
   const renderComponent = () => {
     switch (selectedComponent) {
-        case 'Forest':
-            return (
-                <Forest
-                    onAnimalClick={handleAnimalClick}
-                    animalStage={interactionMode ? animalStage : 0} // Show animals only in interaction mode
-                    showMessage={interactionMode && showMessage} // Show messages only in interaction mode
-                    onCheckmarkClick={handleCheckmarkClick}
-                    interactionMode={interactionMode} // Pass interaction mode to Forest
-                />
-            );
-        case 'Ocean':
-            return <Ocean />;
-        default:
-            return null;
+      case 'Forest':
+        return (
+          <Forest
+            onAnimalClick={handleAnimalClick}
+            animalStage={interactionMode ? animalStage : 0} // Show animals only in interaction mode
+            showMessage={interactionMode && showMessage} // Show messages only in interaction mode
+            onCheckmarkClick={handleCheckmarkClick}
+            interactionMode={interactionMode} // Pass interaction mode to Forest
+          />
+        );
+      case 'Ocean':
+        return (
+          <Ocean
+            onAnimalClick={handleAnimalClick}
+            animalStage={interactionMode ? animalStage : 0} // Show animals only in interaction mode
+            showMessage={interactionMode && showMessage} // Show messages only in interaction mode
+            onCheckmarkClick={handleCheckmarkClick}
+            interactionMode={interactionMode} // Pass interaction mode to Ocean
+          />
+        );
+      default:
+        return null;
     }
-};
+  };
 
   return (
     <div className="App">
@@ -132,7 +140,6 @@ function App() {
       <MusicMenu currentScene={selectedComponent} />
 
       {/* Render the selected component */}
-
       {renderComponent()}
 
       <div className="menu-bar">
