@@ -45,19 +45,23 @@ body {
 }
 
 .mode-btn {
-  background-color: #45a049;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 50px; /* Rounded to match the menu icon */
-  padding: 10px 20px; /* Adjust padding for a pill-like shape */
+  border-radius: 50px;
+  padding: 12px 24px;
   cursor: pointer;
   font-size: 14px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 .mode-btn:hover {
-  background-color: #388e3c; /* Darker green on hover */
+  background-color: #45a049;
 }
 
 .mode-selector {
