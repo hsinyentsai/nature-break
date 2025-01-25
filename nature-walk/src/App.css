@@ -78,7 +78,7 @@ body {
 .bear-container {
   position: absolute;
   top: 78%;
-  left: 70%;
+  left: 75%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
@@ -87,6 +87,40 @@ body {
 }
 
 .Bear-1 {
+  width: 250px;
+  animation: shake 3s infinite; /* Shake faster by reducing time */
+  transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
+}
+
+.owl-container {
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Apply transition to bear-container */
+}
+
+.Owl {
+  width: 250px;
+  animation: shake 3s infinite; /* Shake faster by reducing time */
+  transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
+}
+
+.rabbit-container {
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Apply transition to bear-container */
+}
+
+.Rabbit {
   width: 250px;
   animation: shake 3s infinite; /* Shake faster by reducing time */
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
