@@ -12,6 +12,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
+  justify-content: center;
 }
 
 /* MENU */
@@ -21,6 +22,10 @@ body {
   top: 20px;
   right: 20px;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .menu-icon {
@@ -49,6 +54,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  z-index: 200;
 }
 
 .menu-option {
