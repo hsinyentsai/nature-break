@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import logo from '../Asset/ForrestVideo.mp4'; // Import video file
-import logoHolder from '../Asset/Background.png';
+import logo from '../Asset/ForrestVideo.mp4.mp4'; // Import video file
 import bear from '../Asset/bear.svg';
 import owl from '../Asset/Owl.svg';
 import rabbit from '../Asset/rabbit.svg';
@@ -32,10 +31,9 @@ export const Forest = () => {
 
     return (
         <>
-        {/* <video autoPlay loop muted className="App-background">
+        <video autoPlay loop muted className="App-background">
             <source src={logo} type="video/mp4" />
-        </video> */}
-        <img className="App-background" src={logoHolder} alt="" />
+        </video>
         <div className="bear-container">
             <img
             src={bear}
