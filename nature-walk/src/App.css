@@ -15,6 +15,39 @@ body {
   justify-content: center;
 }
 
+.popup-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3c8a3e;
+  padding: 25px 80px ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.popup-main p {
+  margin: 0 0 10px;
+}
+
+.close-btn-main {
+  position: absolute;
+  top: 0px; /* Reduced to bring it closer to the top */
+  right: 0px; /* Reduced to bring it closer to the right */
+  color: black; /* Black X */
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 20px; /* Slightly larger font for visibility */
+  cursor: pointer;
+  padding: 0; /* Remove extra padding */
+  line-height: 1; /* Adjust line-height for proper centering */
+}
+
+.close-btn-main:hover {
+  background: #383434;
+}
+
 /* MENU */
 
 .icon-menu {
@@ -95,7 +128,7 @@ body {
 
 .bear-container {
   position: absolute;
-  top: 78%;
+  top: 76%;
   left: 75%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -105,8 +138,8 @@ body {
 }
 
 .Bear-1 {
-  width: 250px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  width: 200px;
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
 }
 
@@ -123,7 +156,7 @@ body {
 
 .Owl {
   width: 250px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
 }
 
@@ -139,32 +172,22 @@ body {
 }
 
 .Rabbit {
-  width: 250px;
-  animation: shake 3s infinite; /* Shake faster by reducing time */
+  width: 190px;
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0) rotate(0deg); /* No shake, no rotation */
-  }
-  25% {
-    transform: translateX(-10px) rotate(-5deg); /* Move to the left and rotate slightly left */
-  }
-  50% {
-    transform: translateX(10px) rotate(5deg); /* Move to the right and rotate slightly right */
-  }
-  75% {
-    transform: translateX(-10px) rotate(-5deg); /* Move to the left and rotate slightly left */
-  }
-  100% {
-    transform: translateX(0) rotate(0deg); /* Back to original position */
-  }
 }
 
 /* Scale effect on hover */
 .bear-container:hover .Bear-1 {
-  transform: scale(1.3); 
+  transform: scale(1.1); 
+}
+
+.owl-container:hover .Owl {
+  transform: scale(1.1); 
+}
+
+.rabbit-container:hover .Rabbit {
+  transform: scale(1.1); 
 }
 
 @keyframes fadeIn {
@@ -223,7 +246,24 @@ body {
   transform: translateY(-50%) scale(1.2); /* Scales up without shifting */
 }
 
+.popup-main button {
+  flex: 1;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px; /* Rounded border */
+  color: rgb(160, 190, 167)(24, 84, 42);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
 
+.popup-main button:hover {
+  background-color: #45a049; /* Background color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
 
+.popup-main button:not(:last-child) {
+  margin-right: 20px; /* Space between buttons */
+}
 
 /* OCEAN */
