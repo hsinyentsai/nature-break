@@ -10,13 +10,61 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/* MENU */
+
+.icon-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.menu-icon {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.menu-icon:hover {
+  background-color: #45a049;
+}
+
+.popup-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.menu-option {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.menu-option:hover {
+  background-color: #f0f0f0;
+}
+
+/* FOREST */
+ /** FOREST BEAR **/
 .App-background {
   position: absolute;
   top: 0;
@@ -39,7 +87,7 @@ body {
 }
 
 .Bear-1 {
-  width: 190px;
+  width: 250px;
   animation: shake 3s infinite; /* Shake faster by reducing time */
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
 }
@@ -76,38 +124,54 @@ body {
   }
 }
 
-.popup {
-  position: absolute;
-  bottom: 100%; /* Place above the bear */
+.popup-box {
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%); /* Center the popup horizontally above the bear */
-  background-color: rgb(219, 209, 209); /* White background for the bubble */
-  color: black; /* Black text */
-  padding: 10px 20px;
-  border-radius: 50px; /* Oval shape */
-  font-size: 16px; /* Calmer text size */
-  opacity: 0;
-  animation: fadeIn 0.3s forwards;
-  white-space: nowrap;
-  font-family: 'Arial', sans-serif; /* Calmer font style */
+  transform: translate(-50%, -50%);
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 9999;
+  font-family: 'Arial', sans-serif;
 }
 
-.popup::after {
-  content: '';
+.popup-message {
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the text */
+  gap: 10px;
+  position: relative;
+}
+
+.popup-message p {
+  margin: 0; /* Remove extra spacing around paragraphs */
+}
+
+.checkmark-button {
   position: absolute;
-  left: 50%; /* Position the triangle pointing to the bear */
-  top: 100%; /* Place it at the bottom of the popup */
-  transform: translateX(-50%) rotate(93deg); /* Rotate the triangle by 45 degrees */
-  border-left: 10px solid rgb(219, 209, 209); /* Create a triangle */
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+  right: -60px; /* Adjust to align with the text */
+  top: 50%;
+  transform: translateY(-50%); /* Keeps it vertically centered */
+  background: none;
+  border: none;
+  color: green;
+  font-size: 40px; /* Large enough to cover both lines */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.checkmark-button:hover {
+  transform: translateY(-50%) scale(1.2); /* Scales up without shifting */
 }
+
+
+
+
+/* OCEAN */
