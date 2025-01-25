@@ -22,9 +22,6 @@ export const IconMenu = ({ onSelect }) => {
           <div className="menu-option" onClick={() => { onSelect('Ocean'); setPopupVisible(false); }}>
             Ocean
           </div>
-          <div className="menu-option" onClick={() => { onSelect('Mountain'); setPopupVisible(false); }}>
-            Mountain
-          </div>
         </div>
       )}
     </div>

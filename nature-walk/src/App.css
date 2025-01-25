@@ -15,7 +15,6 @@ body {
   justify-content: center;
 }
 
-/* MENU */
 .popup-welcome {
   animation: fadeIn 0.75s ease-in-out;
   position: fixed;
@@ -31,6 +30,77 @@ body {
   max-width: 400px;
   width: 80%;
 }
+
+/* MENU */
+
+.menu-bar {
+  display: flex;
+  justify-content: space-between; /* Ensure space between left and right items */
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Move the switch to the left */
+  right: 10px; /* Keep space for menu on the right */
+  width: 100%; /* Take full width */
+  gap: 10px; /* Space between the buttons */
+}
+
+.mode-btn {
+  background-color: #45a049;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded to match the menu icon */
+  padding: 10px 20px; /* Adjust padding for a pill-like shape */
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match shadow */
+  transition: background-color 0.3s ease;
+}
+
+.mode-btn:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.mode-selector {
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.menu-option {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.menu-option:hover {
+  background-color: #f0f0f0;
+}
+
 
 @keyframes fadeIn {
   from {
@@ -79,6 +149,7 @@ body {
   align-items: center;
   flex-direction: row; /* Align items horizontally (side by side) */
   text-align: center; /* Align text to the left */
+  animation: fadeIn 0.75s ease-in-out;
 }
 
 .popup-main p {
@@ -101,52 +172,7 @@ body {
   background: #383434;
 }
 
-.icon-menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
 
-.menu-icon {
-  background-color: #4caf50;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.menu-icon:hover {
-  background-color: #45a049;
-}
-
-.popup-menu {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.menu-option {
-  padding: 12px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  text-align: left;
-}
-
-.menu-option:hover {
-  background-color: #f0f0f0;
-}
 
 /* FOREST */
 /* Backgrounds for components */
@@ -300,4 +326,70 @@ button:hover {
 
 .checkmark-button:hover {
   transform: scale(1.2);
+}
+
+/* MUSIC MENU */
+
+.music-menu {
+  position: fixed;
+  top: 20px;
+  right: 90px;
+  z-index: 1000;
+}
+
+.music-icon {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.music-option {
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.music-option:hover {
+  background-color: #f0f0f0;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.control-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.control-button:hover {
+  background-color: #f0f0f0;
 }
