@@ -12,22 +12,18 @@
           padding: 20px;
           background-color: #f0f8ff;
         }
-        h1 {
-          color: #4caf50;
-        }
         p {
           font-size: 16px;
           color: #555;
+          margin-bottom: 20px;
         }
-        button, input {
+        button {
           margin: 10px;
           padding: 10px 20px;
           font-size: 16px;
           border: none;
           border-radius: 5px;
           cursor: pointer;
-        }
-        button {
           background-color: #4caf50;
           color: white;
         }
@@ -41,57 +37,66 @@
           background-color: #d32f2f;
         }
         #mute-btn {
-          background-color: #808080; /* Gray background */
+          background-color: #808080;
           color: white;
         }
         #mute-btn:hover {
-          background-color: #696969; /* Darker gray */
+          background-color: #696969;
         }
-        .mute-button {
+        #mute-options {
+          display: none;
+          margin-top: 10px;
+          justify-content: center;
+          gap: 10px;
+        }
+        .mute-option {
           background-color: #808080;
           color: white;
-          margin: 5px;
           padding: 10px 15px;
           border: none;
           border-radius: 5px;
           cursor: pointer;
         }
-        .mute-button:hover {
+        .mute-option:hover {
           background-color: #696969;
         }
-        #mute-options {
-          display: none;
+        .frequency-section {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #555;
         }
         input {
-          width: 80px;
+          margin: 5px;
+          padding: 5px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          width: 50px;
           text-align: center;
-        }
-        label {
-          display: block;
-          margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-<h1>Take a Nature Break! 🌿</h1>
-<p>You’ve been working hard. Time to recharge! What would you like to do?</p>
+<p id="notification-message">You’ve been working hard. Time to recharge!</p>
 <button id="youtube-btn">🌼 Yes, take me there!</button>
 <button id="work-btn">💻 I'd rather keep working.</button>
 <br>
-<button id="mute-btn">🔇 Mute me to stay focused</button>
+<button id="mute-btn">🔇 Mute Notifications</button>
 <div id="mute-options">
-    <button class="mute-button" data-duration="60">1 Hour</button>
-    <button class="mute-button" data-duration="120">2 Hours</button>
-    <button class="mute-button" data-duration="300">5 Hours</button>
+    <button class="mute-option" data-duration="60">1 Hour</button>
+    <button class="mute-option" data-duration="120">2 Hours</button>
+    <button class="mute-option" data-duration="300">5 Hours</button>
 </div>
-<br>
-<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
-<label for="hours-input">Set Notification Frequency:</label>
-<div>
-    <input id="hours-input" type="number" min="0" placeholder="Hours"> :
-    <input id="minutes-input" type="number" min="0" max="59" placeholder="Minutes">
+
+<div class="frequency-section">
+    <label for="hours-input">Change Notification Frequency:</label>
+    <div>
+        <input id="hours-input" type="number" min="0" placeholder="Hrs"> :
+        <input id="minutes-input" type="number" min="0" max="59" placeholder="Mins">
+    </div>
+    <button id="update-frequency-btn">Update Frequency</button>
 </div>
-<button id="update-frequency-btn">Update Frequency</button>
+
 <script src="popup.js"></script>
 </body>
 </html>
