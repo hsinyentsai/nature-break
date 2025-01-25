@@ -35,15 +35,6 @@ export const IconMenu = ({ onSelect }) => {
           >
             Ocean
           </div>
-          <div
-            className="menu-option"
-            onClick={() => {
-              onSelect('Mountain');
-              togglePopup();
-            }}
-          >
-            Mountain
-          </div>
         </div>
       )}
     </div>
