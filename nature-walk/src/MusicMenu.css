@@ -1,21 +1,26 @@
 .music-menu {
     position: fixed;
-    top: 10px;
-    right: 80px;
+    top: 20px;
+    right: 90px;
+    z-index: 1000;
   }
   
   .music-icon {
-    background: none;
+    background-color: #4caf50;
     border: none;
-    cursor: pointer;
-    padding: 10px;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .music-dropdown {
     position: absolute;
-    top: 40px;
+    top: 60px;
     right: 0;
     background: white;
     border: 1px solid #ccc;

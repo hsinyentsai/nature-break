@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../Asset/ForrestVideo.mp4.mp4'; // Import video file
+import logo from '../Asset/Forrest5sec.mp4'; // Import video file
 import bear from '../Asset/bear.svg';
 import owl from '../Asset/Owl.svg';
 import rabbit from '../Asset/rabbit.svg';

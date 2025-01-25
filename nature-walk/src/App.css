@@ -267,3 +267,83 @@ body {
 }
 
 /* OCEAN */
+
+/* OCEAN STAR */
+.star-container {
+  position: absolute;
+  top: 85%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Star {
+  width: 180px;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.star-container:hover .Star {
+  transform: scale(1.1);
+}
+
+/* OCEAN SHELL */
+.shell-container {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Shell {
+  width: 150px;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.shell-container:hover .Shell {
+  transform: scale(1.1);
+}
+
+/* OCEAN CRAB */
+.crab-container {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Crab {
+  width: 200px;
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.crab-container:hover .Crab {
+  transform: scale(1.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
