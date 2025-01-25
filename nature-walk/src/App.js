@@ -19,7 +19,7 @@ function App() {
     // Trigger session timeout popup after 5 minutes
     const sessionTimeout = setTimeout(() => {
       setSessionPopup(true);
-    }, 5 * 60 * 1000); // 5 minutes in milliseconds
+    }, 5 * 60 * 100); // 5 minutes in milliseconds
 
     return () => clearTimeout(sessionTimeout);
   }, []);
@@ -42,18 +42,22 @@ function App() {
       {showPopup && (
         <div className="popup-main">
           <button className="close-btn-main" onClick={() => setShowPopup(false)}>X</button>
-          <p>Welcome to your Virtual Nature Walk! 🌱 Let the animals guide you Click on them to uncover soothing messages!</p>
+          <p>Welcome to your Virtual Nature Walk! 🌱 </p>
+          <p>Let the animals guide you 😊 </p> 
+          <p> Click on them to uncover soothing messages!</p>
         </div>
       )}
 
       {sessionPopup && (
-        <div className="popup-main">
-          <button className="close-btn-main" onClick={() => setShowPopup(false)}>X</button>
-          <p>Your session has ended. Would you like to stay on the website?</p>
-          <button onClick={() => setSessionPopup(false)}>Yes</button>
-          <button onClick={() => window.close()}>No</button>
-        </div>
-      )}
+          <div className="popup-main">
+            <button className="close-btn-main" onClick={() => setSessionPopup(false)}>X</button>
+            <p>Your session has ended. How do you feel? 😊</p>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
+              <button onClick={() => setSessionPopup(false)}>I want to stay and relax 🌱</button>
+              <button onClick={() => window.close()}>I feel refreshed and ready to work 🏋🏻‍♂️ </button>
+            </div>
+          </div>
+        )}
 
       <IconMenu onSelect={setSelectedComponent} />
       {renderComponent()}
