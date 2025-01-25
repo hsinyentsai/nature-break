@@ -101,5 +101,5 @@ export const Forest = () => {
             </div>
         )}
         </>
-    );
+    )
 };
