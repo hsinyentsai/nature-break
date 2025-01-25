@@ -16,7 +16,7 @@ export const Forest = () => {
 
   return (
     <>
-        <video autoPlay loop className="App-background">
+        <video autoPlay loop muted className="App-background">
             <source src={logo} type="video/mp4" />
         </video>
         <div className="bear-container">
