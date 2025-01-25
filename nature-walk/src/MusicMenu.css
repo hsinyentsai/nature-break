@@ -1,0 +1,58 @@
+.music-menu {
+    position: fixed;
+    top: 10px;
+    right: 80px;
+  }
+  
+  .music-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .music-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .music-option {
+    text-align: center;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .music-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .weather-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  
+  .control-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .control-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .control-button:hover {
+    background-color: #f0f0f0;
+  }
