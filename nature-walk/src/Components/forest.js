@@ -48,7 +48,7 @@ export const Forest = ({ onAnimalClick, animalStage, showMessage, onCheckmarkCli
                     )}
                     {animalStage === 2 && showMessage && (
                         <div className="popup-main">
-                            <p>Take a deep breath 🧘🏻‍♀️ Just like an owl perched quietly in the night 🦉</p>
+                            <p>🦉 Rest your mind. Like the owl in the stillness, let your thoughts drift peacefully. Close your eyes, breathe deeply, and let tranquility fill your soul 🦉</p>
                             <button onClick={onCheckmarkClick}>✔️</button>
                         </div>
                     )}
