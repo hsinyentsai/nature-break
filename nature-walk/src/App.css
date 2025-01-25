@@ -137,14 +137,8 @@ body {
 
 .Bear-1 {
   width: 250px;
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
-}
-
-.Bear-1 {
-  width: 250px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Slightly round the corners */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .owl-container {
@@ -160,6 +154,7 @@ body {
 
 .Owl {
   width: 250px;
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
 }
 
@@ -175,7 +170,8 @@ body {
 }
 
 .Rabbit {
-  width: 250px;
+  width: 190px;
+  animation: shake 3s infinite;
   transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
 }
 
@@ -248,7 +244,23 @@ body {
   transform: translateY(-50%) scale(1.2); /* Scales up without shifting */
 }
 
-
+@keyframes shake {
+  0% {
+    transform: translateX(0) rotate(0deg); /* No shake, no rotation */
+  }
+  25% {
+    transform: translateX(-10px) rotate(-5deg); /* Move to the left and rotate slightly left */
+  }
+  50% {
+    transform: translateX(10px) rotate(5deg); /* Move to the right and rotate slightly right */
+  }
+  75% {
+    transform: translateX(-10px) rotate(-5deg); /* Move to the left and rotate slightly left */
+  }
+  100% {
+    transform: translateX(0) rotate(0deg); /* Back to original position */
+  }
+}
 
 
 /* OCEAN */
