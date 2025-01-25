@@ -303,7 +303,7 @@ body {
 }
 
 .Shell {
-  width: 150px;
+  width: 250px;
   animation: float 3s ease-in-out infinite;
   transition: transform 0.3s ease-in-out;
 }
