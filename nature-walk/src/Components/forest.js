@@ -1,105 +1,67 @@
-import React, { useState } from 'react';
-import logo from '../Asset/ForrestVideo.mp4.mp4'; // Import video file
+import React, { useState, useRef } from 'react';
 import bear from '../Asset/bear.svg';
 import owl from '../Asset/Owl.svg';
 import rabbit from '../Asset/rabbit.svg';
 import '../App.css';
+import logo from '../Asset/ForrestVideo.mp4.mp4'; // Default background (bear)
 
-export const Forest = () => {
-    const [isPopupVisible, setPopupVisible] = useState(false);  // Bear popup state
-    const [isPopupVisible2, setPopupVisible2] = useState(false); // Owl popup state
-    const [isPopupVisible3, setPopupVisible3] = useState(false); // Rabbit popup state
-
-    const handleBearClick = () => {
-        setPopupVisible(true);
-    };
-
-    const handleOwlClick = () => {
-        setPopupVisible2(true);
-    };
-
-    const handleRabbitClick = () => {
-        setPopupVisible3(true);
-    };
-
-    // Close all popups
-    const handleClosePopup = () => {
-        setPopupVisible(false);
-        setPopupVisible2(false);
-        setPopupVisible3(false);
-    };
+export const Forest = ({ onAnimalClick, animalStage, showMessage, onCheckmarkClick }) => {
+    const [backgroundVideo] = useState(logo); // Default to bear background
+    const [isFading] = useState(false); // State to manage fading
+    const videoRef = useRef(null); // Reference to video element
 
     return (
-        <>
-        <video autoPlay loop muted className="App-background">
-            <source src={logo} type="video/mp4" />
-        </video>
-        <div className="bear-container">
-            <img
-            src={bear}
-            className="Bear-1"
-            alt="bear"
-            onClick={handleBearClick}
-            />
-        </div>
-        <div className="owl-container">
-            <img
-            src={owl}
-            className="Owl"
-            alt="owl"
-            onClick={handleOwlClick}
-            />
-        </div>
-        <div className="rabbit-container">
-            <img
-            src={rabbit}
-            className="Rabbit"
-            alt="rabbit"
-            onClick={handleRabbitClick}
-            />
-        </div>
+        <div>
+            <div className="background-forest">
+                <video
+                    ref={videoRef}
+                    autoPlay
+                    loop
+                    muted
+                    className={`background-video ${isFading ? 'fade-out' : 'fade-in'}`}
+                >
+                    <source src={backgroundVideo} type="video/mp4" />
+                </video>
+            </div>
 
-        {/* Bear Popup */}
-        {isPopupVisible && (
-            <div className="popup-box">
-            <div className="popup-message">
-                <p>The bear is drinking water! 💧</p>
-                <p>You should do so too! 😊</p>
-                <button className="checkmark-button" onClick={handleClosePopup}>
-                ✅
-                </button>
-            </div>
-            </div>
-        )}
+            {/* Bear */}
+            {animalStage === 1 && (
+                <div className="bear-container" onClick={onAnimalClick}>
+                    <img src={bear} alt="bear" className="Bear-1" />
+                </div>
+            )}
+            {animalStage === 1 && showMessage && (
+                <div className="popup-main">
+                    <p>The bear is drinking water! 💧 You should do so too! 😊</p>
+                    <button onClick={onCheckmarkClick}>✔️</button>
+                </div>
+            )}
 
-        {/* Owl Popup */}
-        {isPopupVisible2 && (
-            <div className="popup-box">
-            <div className="popup-message">
-                <p>
-                Take a deep breath 🧘🏻‍♀️ Just like an owl perched quietly in the
-                night 🦉
-                </p>
-                <button className="checkmark-button" onClick={handleClosePopup}>
-                ✅
-                </button>
-            </div>
-            </div>
-        )}
+            {/* Owl */}
+            {animalStage === 2 && (
+                <div className="owl-container" onClick={onAnimalClick}>
+                    <img src={owl} alt="owl" className="Owl" />
+                </div>
+            )}
+            {animalStage === 2 && showMessage && (
+                <div className="popup-main">
+                    <p>Take a deep breath 🧘🏻‍♀️ Just like an owl perched quietly in the night 🦉</p>
+                    <button onClick={onCheckmarkClick}>✔️</button>
+                </div>
+            )}
 
-        {/* Rabbit Popup */}
-        {isPopupVisible3 && (
-            <div className="popup-box">
-            <div className="popup-message">
-                <p>
-                Stretch like a rabbit reaching for the sky, long and gentle! 🐇 A little stretch can make you feel as light and quick as a hop.
-                </p>
-                <button className="checkmark-button" onClick={handleClosePopup}>
-                ✅
-                </button>
-            </div>
-            </div>
-        )}
-        </>
+            {/* Rabbit */}
+            {animalStage === 3 && (
+                <div className="rabbit-container" onClick={onAnimalClick}>
+                    <img src={rabbit} alt="rabbit" className="Rabbit" />
+                </div>
+            )}
+            {animalStage === 3 && showMessage && (
+                <div className="popup-main">
+                    <p>Stretch like a rabbit reaching for the sky, long and gentle! 🐇 A little stretch can make you feel as light and quick as a hop.</p>
+                    <button onClick={onCheckmarkClick}>✔️</button>
+                </div>
+            )}
+        </div>
     );
 };

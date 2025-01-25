@@ -1,3 +1,4 @@
+/* Basic styles for body and app */
 body {
   margin: 0;
   padding: 0;
@@ -14,40 +15,81 @@ body {
   justify-content: center;
 }
 
+/* MENU */
+.popup-welcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8fbf9;
+  padding: 30px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Center the buttons and add space between them */
+.popup-welcome > div {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 20px; /* Space between the buttons */
+  margin-top: 20px;
+}
+
+.popup-welcome button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-welcome button:hover {
+  background-color: #218838;
+}
+
 .popup-main {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #3c8a3e;
-  padding: 25px 80px ;
+  background-color: #f8fbf9; /* Slightly different background color */
+  padding: 25px 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   z-index: 1000;
+  display: flex; /* Flexbox for centering content */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Align items horizontally (side by side) */
+  text-align: center; /* Align text to the left */
 }
 
 .popup-main p {
-  margin: 0 0 10px;
+  margin: 0 15px 0 0; /* Adjust margin between text and button */
+  flex-grow: 1; /* Allow text to take up available space */
 }
 
 .close-btn-main {
   position: absolute;
-  top: 0px; /* Reduced to bring it closer to the top */
-  right: 0px; /* Reduced to bring it closer to the right */
-  color: black; /* Black X */
-  background: none; /* No background */
-  border: none; /* No border */
-  font-size: 20px; /* Slightly larger font for visibility */
+  top: 10px;
+  right: 10px;
+  color: black;
+  background: none;
+  border: none;
+  font-size: 20px;
   cursor: pointer;
-  padding: 0; /* Remove extra padding */
-  line-height: 1; /* Adjust line-height for proper centering */
 }
 
 .close-btn-main:hover {
   background: #383434;
 }
-
-/* MENU */
 
 .icon-menu {
   position: absolute;
@@ -97,167 +139,117 @@ body {
 }
 
 /* FOREST */
- /** FOREST BEAR **/
- .App-background {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Backgrounds for components */
+.background-forest {
+  position: relative;
   width: 100%;
-  height: 100%;  /* Ensure it covers the full height */
-  object-fit: cover;  /* Ensure it covers the entire viewport without distortion */
-  z-index: -1;  /* Make sure the background is behind other elements */
-  background-attachment: fixed; /* Keeps the background fixed while scrolling */
-  background-position: 0% 0%; /* Initial position */
-  animation: moveBackground 180s linear infinite; /* Slow and continuous movement */
+  height: 100vh;
+  overflow: hidden;
 }
 
-@keyframes moveBackground {
-  0% {
-    background-position: 0% 0%; /* Starting position */
-  }
-  100% {
-    background-position: 100% 100%; /* Slowly moves across the screen */
-  }
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.bear-container {
+/* Animal containers */
+.bear-container,
+.owl-container,
+.rabbit-container {
   position: absolute;
-  top: 76%;
-  left: 75%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease-in-out; /* Apply transition to bear-container */
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Bear position (bottom-right corner) */
+.bear-container {
+  top: 78%;
+  left: 75%;
+  transform: translate(-50%, -50%);
 }
 
 .Bear-1 {
-  width: 200px;
-  animation: shake 3s infinite;
-  transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
+  width: 250px;
+  animation: shake 3s infinite; /* Shake faster by reducing time */
 }
 
+/* Owl position (adjust position based on preference) */
 .owl-container {
-  position: absolute;
-  top: 15%;
-  left: 45%;
+  top: 35%;
+  left: 72%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out; /* Apply transition to bear-container */
 }
 
 .Owl {
-  width: 250px;
-  animation: shake 3s infinite;
-  transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
+  width: 150px;
+  animation: shake 3s infinite; /* Shake faster by reducing time */
 }
 
+/* Rabbit position (adjust position based on preference) */
 .rabbit-container {
-  position: absolute;
-  top: 55%;
-  left: 15%;
+  top: 70%;
+  left: 65%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out; /* Apply transition to bear-container */
 }
 
 .Rabbit {
-  width: 190px;
-  animation: shake 3s infinite;
-  transition: transform 0.3s ease-in-out; /* Apply smooth scale transition */
+  width: 200px;
+  animation: shake 3s infinite; /* Shake faster by reducing time */
 }
 
-/* Scale effect on hover */
-.bear-container:hover .Bear-1 {
-  transform: scale(1.1); 
-}
-
-.owl-container:hover .Owl {
-  transform: scale(1.1); 
-}
-
-.rabbit-container:hover .Rabbit {
-  transform: scale(1.1); 
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Popup and button styles */
 .popup-box {
-  position: fixed;
+  position: fixed;  /* Ensure it's always fixed on the screen */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
   padding: 20px;
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000; /* Ensure popup is above animal */
   text-align: center;
-  z-index: 9999;
-  font-family: 'Arial', sans-serif;
+  max-width: 80%;
 }
 
-.popup-message {
-  font-size: 18px;
-  margin: 0;
+.center-popup {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the text */
-  gap: 10px;
-  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
-.popup-message p {
-  margin: 0; /* Remove extra spacing around paragraphs */
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 0; /* Remove margin-top since buttons are side by side */
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
 }
 
 .checkmark-button {
-  position: absolute;
-  right: -60px; /* Adjust to align with the text */
-  top: 50%;
-  transform: translateY(-50%); /* Keeps it vertically centered */
   background: none;
   border: none;
   color: green;
-  font-size: 40px; /* Large enough to cover both lines */
+  font-size: 40px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
+  transition: transform 0.2s ease-in-out;
+  margin-left: 15px; /* Space between the text and checkmark button */
 }
 
 .checkmark-button:hover {
-  transform: translateY(-50%) scale(1.2); /* Scales up without shifting */
+  transform: scale(1.2);
 }
-
-.popup-main button {
-  flex: 1;
-  padding: 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px; /* Rounded border */
-  color: rgb(160, 190, 167)(24, 84, 42);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
-}
-
-.popup-main button:hover {
-  background-color: #45a049; /* Background color on hover */
-  transform: scale(1.05); /* Slight zoom effect */
-}
-
-.popup-main button:not(:last-child) {
-  margin-right: 20px; /* Space between buttons */
-}
-
-/* OCEAN */
