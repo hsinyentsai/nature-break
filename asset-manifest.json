@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nature-break/static/css/main.64caf7da.css",
-    "main.js": "/nature-break/static/js/main.e2fcaf48.js",
+    "main.js": "/nature-break/static/js/main.a686a944.js",
     "static/media/OceanVideo.mp4": "/nature-break/static/media/OceanVideo.4c52b742c3806b5a627c.mp4",
     "static/media/ForrestVideo.mp4.mp4": "/nature-break/static/media/ForrestVideo.mp4.12fbb97002f28962ee8f.mp4",
     "static/media/coconut.svg": "/nature-break/static/media/coconut.24287eadd83ae7fcae726d0b55691acc.svg",
@@ -14,10 +14,10 @@
     "static/media/rabbit.svg": "/nature-break/static/media/rabbit.9f61ff7de1b27e3556138bb08bbcdd7e.svg",
     "index.html": "/nature-break/index.html",
     "main.64caf7da.css.map": "/nature-break/static/css/main.64caf7da.css.map",
-    "main.e2fcaf48.js.map": "/nature-break/static/js/main.e2fcaf48.js.map"
+    "main.a686a944.js.map": "/nature-break/static/js/main.a686a944.js.map"
   },
   "entrypoints": [
     "static/css/main.64caf7da.css",
-    "static/js/main.e2fcaf48.js"
+    "static/js/main.a686a944.js"
   ]
 }
