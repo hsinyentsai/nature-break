@@ -1,0 +1,516 @@
+/* Basic styles for body and app */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-welcome {
+  animation: fadeIn 0.75s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 80px;
+  text-align: center;
+  z-index: 1000;
+  max-width: 400px;
+  width: 80%;
+}
+
+/* MENU */
+
+.menu-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.mode-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.mode-btn:hover {
+  background-color: #45a049;
+}
+
+.mode-selector {
+  position: fixed;
+  top: 750px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.music-icon,
+.menu-icon {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.popup-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.menu-option {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.menu-option:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Center the buttons and add space between them */
+.popup-welcome > div {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 20px; /* Space between the buttons */
+  margin-top: 20px;
+}
+
+.popup-welcome button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-welcome button:hover {
+  background-color: #218838;
+}
+
+.popup-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8fbf9; /* Slightly different background color */
+  padding: 25px 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex; /* Flexbox for centering content */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Align items horizontally (side by side) */
+  text-align: center; /* Align text to the left */
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+.popup-main p {
+  margin: 0 15px 0 0; /* Adjust margin between text and button */
+  flex-grow: 1; /* Allow text to take up available space */
+}
+
+.close-btn-main {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: black;
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.close-btn-main:hover {
+  background: #383434;
+}
+
+/* FOREST */
+/* Backgrounds for components */
+.background-forest {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Animal containers */
+.bear-container,
+.owl-container,
+.rabbit-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Bear position (bottom-right corner) */
+.bear-container {
+  top: 78%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.Bear-1 {
+  width: 250px;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+/* Owl position (adjust position based on preference) */
+.owl-container {
+  top: 15%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+ 
+.Owl {
+  width: 180px;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+/* Rabbit position (adjust position based on preference) */
+.rabbit-group {
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  gap: 20px; /* Space between rabbits */
+}
+
+/* Rabbit 1 (main rabbit) */
+.rabbit-container {
+  position: absolute;
+  top: 49%; /* Adjust based on desired position */
+  left: 47%; /* Adjust based on desired position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Rabbit 2 */
+.rabbit-container1 {
+  position: absolute;
+  top: 55%; /* Example position */
+  left: 20%; /* Example position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Rabbit 3 */
+.rabbit-container2 {
+  position: absolute;
+  top: 80%; /* Example position */
+  left: 85%; /* Example position */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* Common Rabbit Styles */
+.Rabbit {
+  width: 150px;
+  animation: fadeIn 0.75s ease-in-out;
+  cursor: pointer;
+}
+
+.Rabbit2 {
+  width: 200px;
+  animation: fadeIn 0.75s ease-in-out;
+  cursor: pointer;
+}
+
+/* Popup and button styles */
+.popup-box {
+  position: fixed;  /* Ensure it's always fixed on the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000; /* Ensure popup is above animal */
+  text-align: center;
+  max-width: 80%;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+.center-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 0; /* Remove margin-top since buttons are side by side */
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.checkmark-button {
+  background: none;
+  border: none;
+  color: green;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 20px; /* Space between the text and checkmark button */
+}
+
+.checkmark-button:hover {
+  transform: scale(1.2);
+}
+
+/* MUSIC MENU */
+
+.music-menu {
+  position: fixed;
+  top: 20px;
+  right: 90px;
+  z-index: 1000;
+}
+
+.music-icon {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.music-option {
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.music-option:hover {
+  background-color: #f0f0f0;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.control-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.control-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Basic styles for Ocean environment */
+.background-forest { /* Reused for consistency */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Starfish container */
+.starfish-container {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Starfish {
+  width: 150px;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+/* Coconut container */
+.coconut-container {
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Coconut {
+  width: 120px;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+/* Crab container */
+.crab-container {
+  position: absolute;
+  top: 85%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Crab {
+  width: 140px;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+/* Popup styles */
+.popup-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.75s ease-in-out;
+}
+
+.popup-main p {
+  margin: 0 0 10px;
+}
+
+.popup-main button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-main button:hover {
+  background-color: #45a049;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
