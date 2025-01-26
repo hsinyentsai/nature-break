@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/nature-break/static/css/main.64caf7da.css",
-    "main.js": "/nature-break/static/js/main.a686a944.js",
-    "static/media/OceanVideo.mp4": "/nature-break/static/media/OceanVideo.4c52b742c3806b5a627c.mp4",
-    "static/media/ForrestVideo.mp4.mp4": "/nature-break/static/media/ForrestVideo.mp4.12fbb97002f28962ee8f.mp4",
-    "static/media/coconut.svg": "/nature-break/static/media/coconut.24287eadd83ae7fcae726d0b55691acc.svg",
-    "static/media/Owl.svg": "/nature-break/static/media/Owl.94aa77c46ab09cbb2ab7a77c68314d38.svg",
-    "static/media/star.svg": "/nature-break/static/media/star.3117f64c68af1ac7edda688224bfa998.svg",
-    "static/media/crab.svg": "/nature-break/static/media/crab.68223317a4ef75ccff4e6454af49ca68.svg",
-    "static/media/bear.svg": "/nature-break/static/media/bear.4e521f573441de6e1974242302f7ed1e.svg",
-    "static/media/r5.svg": "/nature-break/static/media/r5.7b87bb52919daec0a2e2058d37bd89fb.svg",
-    "static/media/r1.svg": "/nature-break/static/media/r1.614b70537243a313277fda058f4b53e4.svg",
-    "static/media/rabbit.svg": "/nature-break/static/media/rabbit.9f61ff7de1b27e3556138bb08bbcdd7e.svg",
-    "index.html": "/nature-break/index.html",
-    "main.64caf7da.css.map": "/nature-break/static/css/main.64caf7da.css.map",
-    "main.a686a944.js.map": "/nature-break/static/js/main.a686a944.js.map"
+    "main.css": "/paws-for-break/static/css/main.64caf7da.css",
+    "main.js": "/paws-for-break/static/js/main.788611b0.js",
+    "static/media/OceanVideo.mp4": "/paws-for-break/static/media/OceanVideo.4c52b742c3806b5a627c.mp4",
+    "static/media/ForrestVideo.mp4.mp4": "/paws-for-break/static/media/ForrestVideo.mp4.12fbb97002f28962ee8f.mp4",
+    "static/media/coconut.svg": "/paws-for-break/static/media/coconut.24287eadd83ae7fcae726d0b55691acc.svg",
+    "static/media/Owl.svg": "/paws-for-break/static/media/Owl.94aa77c46ab09cbb2ab7a77c68314d38.svg",
+    "static/media/star.svg": "/paws-for-break/static/media/star.3117f64c68af1ac7edda688224bfa998.svg",
+    "static/media/crab.svg": "/paws-for-break/static/media/crab.68223317a4ef75ccff4e6454af49ca68.svg",
+    "static/media/bear.svg": "/paws-for-break/static/media/bear.4e521f573441de6e1974242302f7ed1e.svg",
+    "static/media/r5.svg": "/paws-for-break/static/media/r5.7b87bb52919daec0a2e2058d37bd89fb.svg",
+    "static/media/r1.svg": "/paws-for-break/static/media/r1.614b70537243a313277fda058f4b53e4.svg",
+    "static/media/rabbit.svg": "/paws-for-break/static/media/rabbit.9f61ff7de1b27e3556138bb08bbcdd7e.svg",
+    "index.html": "/paws-for-break/index.html",
+    "main.64caf7da.css.map": "/paws-for-break/static/css/main.64caf7da.css.map",
+    "main.788611b0.js.map": "/paws-for-break/static/js/main.788611b0.js.map"
   },
   "entrypoints": [
     "static/css/main.64caf7da.css",
-    "static/js/main.a686a944.js"
+    "static/js/main.788611b0.js"
   ]
 }
