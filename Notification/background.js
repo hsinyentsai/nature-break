@@ -1,5 +1,5 @@
 // Default notification interval in minutes
-const DEFAULT_INTERVAL = 0.1;
+const DEFAULT_INTERVAL = 0.2;
 let isMuted = false; // Tracks mute status
 
 // List of prompts for notifications

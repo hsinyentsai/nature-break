@@ -13,7 +13,7 @@ document.getElementById("notification-message").innerText = randomMessage;
 
 // Open YouTube when "Yes, take me there!" is clicked
 document.getElementById("youtube-btn").addEventListener("click", () => {
-  window.open("https://www.youtube.com", "_blank");
+  window.open("https://hsinyentsai.github.io/nature-break", "_blank");
   window.close();
 });
 
