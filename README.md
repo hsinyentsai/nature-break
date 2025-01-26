@@ -1,7 +1,7 @@
-# Paws For Break!
+# Paws For Break
 ### Introduction
 
-Paws For Break! is a Chrome extension designed to promote mental-health, 
+Paws For Break is a Chrome extension designed to promote mental-health, 
 lower stress level and improve focus through nature-inspired breaks. 
 It periodically reminds users to take a pause from work, 
 transporting them to calming, immersive nature scenes 
