@@ -1,6 +1,13 @@
 // Default notification interval in minutes
-const DEFAULT_INTERVAL = 1;
+const DEFAULT_INTERVAL = 0.2;
 let isMuted = false; // Tracks mute status
+
+// List of prompts for notifications
+const PROMPTS = [
+  "Hey champ! 🏆 Even superheroes need a breather. Time for a quick escape to nature?",
+  "You've been crushing it for hours—time to recharge with a peaceful nature break?",
+  "Hey superstar, you’ve been in the zone! 🖥️ How about a little forest magic to reset your focus?"
+];
 
 // On installation or extension load, set default interval
 chrome.runtime.onInstalled.addListener(() => {
@@ -46,11 +53,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-// Listen for alarms to trigger the popup, unless muted
+// Listen for alarms to trigger the custom notification window
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "breakReminder" && !isMuted) {
+    const randomMessage = PROMPTS[Math.floor(Math.random() * PROMPTS.length)];
     chrome.windows.create({
-      url: "popup.html",
+      url: `popup.html?message=${encodeURIComponent(randomMessage)}`,
       type: "popup",
       width: 400,
       height: 350,
