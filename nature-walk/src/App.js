@@ -95,8 +95,8 @@ function App() {
       {showPopup && interactionMode && (
         <div className="popup-welcome">
           <button className="close-btn-main" onClick={handleCloseWelcomePopup}>X</button>
-          <p>Welcome to Bearly Stressed! 🐻</p>
-          <p>Let the animals guide you 😊</p>
+          <p>Welcome to Paws For Break! 🐾</p>
+          <p>Let the nature guide you 😊</p>
           <p>Click on them to uncover soothing messages!</p>
         </div>
       )}
